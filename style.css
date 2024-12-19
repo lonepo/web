@@ -1,0 +1,77 @@
+/* General body styles */
+body {
+    background-color: black;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 1px solid #444;
+}
+/* Button styles */
+button, .button {
+    background-color: #00bfff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .button:hover {
+    background-color: #87cefa; /* Lighter shade for hover */
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+    margin: 1em 0;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: lightgray;
+}
+
+/* Content container */
+.container {
+    width: 80%;
+    margin: 2em auto;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid #444;
+}
+
+/* Link styles */
+a {
+    color: #00bfff;
+}
+
+a:hover {
+    color: #87cefa;
+}
