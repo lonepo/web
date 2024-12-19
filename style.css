@@ -1,77 +1,86 @@
-/* General body styles */
+/* General styles */
 body {
-    background-color: black;
-    color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
 }
 
-/* Header styles */
+/* Header styling */
 header {
-    text-align: center;
-    padding: 1em 0;
-    border-bottom: 1px solid #444;
-}
-/* Button styles */
-button, .button {
-    background-color: #00bfff; /* Primary color */
-    color: white;
-    border: none;
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space between the left and right sections */
+    align-items: center; /* Vertically center the content */
     padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
+    background-color: #222; /* Darker background for header */
+}
+
+.header-left h1 {
+    margin: 0; /* Remove default margin from the h1 */
+    color: yellow; /* Set header text color to yellow */
+}
+
+.header-right nav {
+    display: flex; /* Arrange the navigation items in a row */
+}
+
+.header-right a {
+    color: yellow; /* Set link text color to yellow */
     text-decoration: none;
-    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
 }
 
-button:hover, .button:hover {
-    background-color: #87cefa; /* Lighter shade for hover */
+.header-right a:hover {
+    background-color: #555; /* Slightly lighter background when hovering */
 }
 
-
-h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-/* Navigation styles */
-nav {
-    text-align: center;
-    margin: 1em 0;
-}
-
-nav a {
-    color: #f0f0f0;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: lightgray;
-}
-
-/* Content container */
+/* Container for blog posts */
 .container {
     width: 80%;
-    margin: 2em auto;
-    line-height: 1.6;
+    margin: 20px auto;
 }
 
-/* Footer styles */
+/* Styling for the blog posts container */
+.blog-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    background-color: #222; /* Dark background for each post */
+    border: 1px solid #444; /* Light border color */
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.blog-post h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-post button {
+    background-color: yellow; /* Set button background to yellow */
+    color: black; /* Set button text color to black */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blog-post button:hover {
+    background-color: #ffcc00; /* Slightly darker yellow for hover effect */
+}
+
+/* Footer styling */
 footer {
+    background-color: #222; /* Dark background for footer */
+    color: yellow; /* Yellow text in footer */
     text-align: center;
-    padding: 1em 0;
-    border-top: 1px solid #444;
-}
-
-/* Link styles */
-a {
-    color: #00bfff;
-}
-
-a:hover {
-    color: #87cefa;
+    padding: 10px 0;
 }
