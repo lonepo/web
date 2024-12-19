@@ -36,45 +36,48 @@ header {
     background-color: #555; /* Slightly lighter background when hovering */
 }
 
-/* Container for blog posts */
-.container {
-    width: 80%;
-    margin: 20px auto;
-}
-
-/* Styling for the blog posts container */
-.blog-posts {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.blog-post {
-    background-color: #222; /* Dark background for each post */
-    border: 1px solid #444; /* Light border color */
-    border-radius: 8px;
-    width: 30%;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-.blog-post h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.blog-post button {
+/* Styling for blog post buttons and links */
+button, .back-to-home {
     background-color: yellow; /* Set button background to yellow */
     color: black; /* Set button text color to black */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none; /* For links styled as buttons */
+    display: inline-block; /* For buttons and links to align */
 }
 
-.blog-post button:hover {
+button:hover, .back-to-home:hover {
     background-color: #ffcc00; /* Slightly darker yellow for hover effect */
+}
+
+/* Container for the blog post content */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222; /* Dark background for content area */
+    border-radius: 8px; /* Rounded corners for the content box */
+    border: 1px solid #444; /* Light border color */
+}
+
+.container h2, .container h3 {
+    color: yellow; /* Set headers to yellow */
+}
+
+.container p {
+    line-height: 1.6;
+}
+
+.container ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.container li {
+    color: yellow; /* Set list items to yellow */
+    margin-bottom: 10px;
 }
 
 /* Footer styling */
