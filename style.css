@@ -1,55 +1,66 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Hi Melody", serif;
     margin: 0;
     padding: 0;
-    background-color: black; /* Set the background color to black */
-    color: white; /* Set the text color to white */
+    background-color: black;
+    color: white;
+}
+
+/* Font classes */
+.caveat-brush {
+    font-family: "Caveat Brush", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chewy-regular {
+    font-family: "Chewy", serif;
+    font-weight: 30;
+    font-style: normal;
+}
+
+.hi-melody-regular {
+    font-family: "Hi Melody", serif;
+    font-weight: 24;
+    font-style: normal;
+}
+
+/* Apply "Caveat Brush" to headers */
+h1, h2, h3 {
+    font-family: "Caveat Brush", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Header styling */
 header {
-    display: flex; /* Use flexbox to align items */
-    justify-content: space-between; /* Space between the left and right sections */
-    align-items: center; /* Vertically center the content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    background-color: #222; /* Darker background for header */
+    background-color: #222;
 }
 
 .header-left h1 {
-    margin: 0; /* Remove default margin from the h1 */
-    color: yellow; /* Set header text color to yellow */
+    margin: 0;
+    color: yellow;
 }
 
 .header-right nav {
-    display: flex; /* Arrange the navigation items in a row */
+    display: flex;
 }
 
 .header-right a {
-    color: yellow; /* Set link text color to yellow */
+    color: yellow;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
+    font-family: "Chewy", serif;
 }
 
 .header-right a:hover {
-    background-color: #555; /* Slightly lighter background when hovering */
-}
-
-/* Styling for blog post buttons and links */
-button, .back-to-home {
-    background-color: yellow; /* Set button background to yellow */
-    color: black; /* Set button text color to black */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* For links styled as buttons */
-    display: inline-block; /* For buttons and links to align */
-}
-
-button:hover, .back-to-home:hover {
-    background-color: #ffcc00; /* Slightly darker yellow for hover effect */
+    background-color: #555;
 }
 
 /* Container for the blog post content */
@@ -57,33 +68,134 @@ button:hover, .back-to-home:hover {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #222; /* Dark background for content area */
-    border-radius: 8px; /* Rounded corners for the content box */
-    border: 1px solid #444; /* Light border color */
+    background-color: #222;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-family: "Hi Melody", serif;
 }
 
 .container h2, .container h3 {
-    color: yellow; /* Set headers to yellow */
+    color: yellow;
 }
 
-.container p {
-    line-height: 1.6;
+/* Blog post section styling */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid layout */
+    gap: 20px;
 }
 
-.container ul {
-    list-style-type: none;
-    padding-left: 20px;
+.blog-post {
+    background-color: #333;
+    border-radius: 12px; /* Rounded corners for the entire box */
+    overflow: hidden; /* Ensures content stays inside the rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0; /* Remove any default padding */
+    margin: 0; /* Remove any default margin */
 }
 
-.container li {
-    color: yellow; /* Set list items to yellow */
-    margin-bottom: 10px;
+.blog-post a {
+    display: block;
+    color: white;
+    text-decoration: none;
 }
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    object-position: center; /* Centers the image */
+    display: block; /* Ensures no extra space below the image */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    border-radius: 12px 12px 0 0; /* Ensure the top corners are rounded */
+}
+
+.blog-post h3 {
+    color: yellow;
+    margin: 10px;
+    font-family: "Chewy", serif;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Scroll Section */
+#smooth-scroll-section {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: yellow;
+    margin-top: 50px;
+    font-family: "Caveat Brush", serif;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: yellow;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Chewy", serif;
+    margin-top: 10px;
+}
+
+#theme-toggle:hover {
+    background: #ffcc00;
+}
+
+/* Quote Generator */
+#quote-btn {
+    margin-top: 10px;
+    background: teal;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Chewy", serif;
+}
+
+#quote-btn:hover {
+    background: #026666;
+}
+
+#quote-display {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: "Hi Melody", serif;
+    color: #d7ff2f;
+}
+
 
 /* Footer styling */
 footer {
-    background-color: #222; /* Dark background for footer */
-    color: yellow; /* Yellow text in footer */
+    background-color: #222;
+    color: yellow;
     text-align: center;
     padding: 10px 0;
+    font-family: "Hi Melody", serif;
 }
