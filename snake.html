@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="snake.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Chewy&family=Hi+Melody&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="caveat-brush">🐍 Snake Game</h1>
+        <div class="controls">
+            <label for="speed">Speed:</label>
+            <select id="speed">
+                <option value="200">Slow</option>
+                <option value="150" selected>Normal</option>
+                <option value="100">Fast</option>
+                <option value="50">Extreme</option>
+            </select>
+        </div>
+    </header>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <footer>
+        <p class="hi-melody-regular">&copy; 2024 Snake Game. Enjoy and Have Fun!</p>
+    </footer>
+    <script src="snake.js"></script>
+</body>
+</html>
