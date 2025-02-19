@@ -1,0 +1,299 @@
+:root {
+  --neon-yellow: #d7ff2f;
+  --neon-blue: #00f3ff;
+  --bg-dark: #0a0a0a;
+  --bg-light: #ffffff;
+  --card-dark: #141414;
+  --text-dark: #ffffff;
+  --border-dark: #2d2d2d;
+  /* Changed accent from red to neon yellow */
+  --accent: #d7ff2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.light-theme {
+  background: var(--bg-light);
+  color: #333;
+}
+
+.header {
+  background: var(--card-dark);
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  /* Uses the updated accent color (neon yellow) */
+  color: var(--accent);
+  /*text-transform: uppercase;*/
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: 'Caveat Brush', cursive;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--neon-yellow);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* Default underline color uses neon yellow */
+  background: var(--accent);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  /* On hover, the underline color changes to neon blue */
+  background: var(--neon-blue);
+}
+
+.mobile-menu {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--card-dark);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 8rem 5% 4rem;
+}
+
+.blog-card {
+  background: var(--card-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+  opacity: 0;
+  transform: scale(0.95);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 1.2s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Different animations based on card position */
+.blog-card:nth-child(3n+2) {
+  animation-name: dropIn;
+  transform-origin: top center;
+}
+
+.blog-card:nth-child(3n+1) {
+  animation-name: slideInLeft;
+  transform: translateX(-50px);
+}
+
+.blog-card:nth-child(3n+3) {
+  animation-name: slideInRight;
+  transform: translateX(50px);
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.blog-card.visible {
+  animation-fill-mode: forwards;
+}
+
+.blog-card:hover {
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 25px rgba(215, 255, 47, 0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.card-image {
+  height: 220px;
+  background: #1f1f1f;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid var(--neon-blue);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.8rem;
+}
+
+.card-content h3 {
+  margin-bottom: 0.8rem;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.card-content p {
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.category {
+  background: rgba(215, 255, 47, 0.1);
+  color: var(--neon-yellow);
+  border: 1px solid var(--neon-yellow);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.date {
+  color: #6b6b6b;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neon-blue);
+  font-weight: 500;
+  transition: gap 0.3s ease;
+}
+
+.read-more:hover {
+  gap: 1rem;
+}
+
+footer {
+  background: var(--card-dark);
+  padding: 3rem 5%;
+  text-align: center;
+  border-top: 1px solid var(--border-dark);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: #6b6b6b;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--neon-yellow);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  background: var(--card-dark);
+  border: 2px solid var(--neon-yellow);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 15px var(--neon-yellow);
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
+  box-shadow: 0 0 25px var(--neon-blue);
+}
