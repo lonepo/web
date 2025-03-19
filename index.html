@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RandomDummies Blog</title>
-  <!-- Link to Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Theme toggle button -->
+  <div class="loading-spinner"></div>
+
   <button class="theme-toggle" id="themeToggle">
     <i class="fas fa-moon"></i>
   </button>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up" style="color: var(--neon-blue);"></i>
+  </div>
 
   <header class="header">
     <nav class="nav">
@@ -27,8 +30,18 @@
     </nav>
   </header>
 
+  <div class="search-filter">
+    <input type="text" class="search-bar" placeholder="Search articles..." id="searchInput">
+    <div class="filter-buttons">
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="AI">AI</button>
+      <button class="filter-btn" data-filter="Security">Security</button>
+      <button class="filter-btn" data-filter="Tech">Tech</button>
+    </div>
+  </div>
+
   <main class="blog-grid" id="articles-container">
-    <!-- Articles will be injected here via JavaScript -->
+    <!-- Articles injected via JavaScript -->
   </main>
 
   <footer>
@@ -40,7 +53,6 @@
     </div>
   </footer>
 
-  <!-- Link to external JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
